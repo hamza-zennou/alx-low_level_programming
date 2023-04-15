@@ -2,15 +2,12 @@
 
 /**
  * _puts - prints a string
- * @str: The string to print
- * Return: void
+ * @str: The string
  */
-
 void _puts(char *str)
 {
-for (; *str != '\0'; str++)
-{
-_putchar(*str);
-}
-_putchar('\n');
+	while (*str)
+		_putchar(*str++);/*counts each allocated character memory*/
+
+	_putchar('\n');
 }

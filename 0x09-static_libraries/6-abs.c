@@ -2,19 +2,14 @@
 
 /**
  * _abs - Computes the absolute value of an integer.
- * @c: The number to be computed.
- * Return: Absolute value of number or zero
+ * @n: The integer to be computed.
+ *
+ * Return: The absolute value of the integer.
  */
-
-int _abs(int c)
-
+int _abs(int n)
 {
-if (c < 0)
-{
-int abs_val;
-
-abs_val = c * -1;
-return (abs_val);
-}
-return (c);
+	if (n >= 0)
+		return (n);
+	else
+		return (-n);
 }
