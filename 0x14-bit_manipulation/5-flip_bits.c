@@ -1,26 +1,22 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * flip_bits - flip bits to convert one number to another number
- * @n: first number
- * @m: second number to convert to
- * Return: number of bits that was needed to flip
+ * flip_bits - returns the number of bits you would
+ * need to flip to get from one number to another
+ * @n: number one.
+ * @m: number two.
+ *
+ * Return: number of bits.
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int diff;
-	int counter;
+	unsigned int nbits;
 
-	diff = n ^ m;
-	counter = 0;
-
-	while (diff)
+	for (nbits = 0; n || m; n >>= 1, m >>= 1)
 	{
-		counter++;
-		diff &= (diff - 1);
+		if ((n & 1) != (m & 1))
+			nbits++;
 	}
 
-	return (counter);
+	return (nbits);
 }
-
